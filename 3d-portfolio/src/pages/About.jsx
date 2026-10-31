@@ -20,9 +20,9 @@ import "./About.css";
 const profile = {
   name: "Khen David F. Famadico",
   title: "Aspiring Developer",
-  location: "Your Location",
+  location: "Calamba City, Laguna, Philippines",
   email: "khendavidfamadico@gmail.com",
-  phone: "+63 XXX XXX XXXX",
+  phone: "+63 993 833 9330",
   education: "Bachelor of Science in Information Technology",
   school: "City College of Calamba",
 };
@@ -30,22 +30,28 @@ const profile = {
 const journey = [
   {
     period: "Present",
-    title: "Growing as a Developer",
+    title: "Acquiring my BSIT degree",
     description:
-      "Learning new technologies and developing practical software projects.",
+      "Learned and developed skills in programming, networking, and system administration. Gained hands-on experience through projects and internships.",
   },
   {
-    period: "Previous",
-    title: "Technical Learning",
+    period: "More curiosity",
+    title: "Pentesting and Linux",
     description:
-      "Building foundational skills in programming, networking, databases, and troubleshooting.",
+      "Did CTFs through controlled virtual environments and learned about ethical hacking, penetration testing, and cybersecurity. Explored new technologies and frameworks to stay updated with industry trends.",
   },
   {
-    period: "Beginning",
-    title: "My First Steps in Technology",
+    period: "Curiosity",
+    title: "Web development and Wallpaper Engine",
     description:
-      "Exploring computers, discovering how technology works, and developing a passion for problem-solving.",
+      "Explored web development techniques and created custom wallpapers using various design tools.",
   },
+  {
+    period: "Alpha",
+    title: "Game development and scripting",
+    description:
+      "Stumbled upon a video about game development and started creating simple games using Python (pygame) along with scripting and automating simple tasks."
+    },
 ];
 
 const specializations = [
@@ -55,6 +61,7 @@ const specializations = [
   { label: "Hardware Troubleshooting", Icon: Wrench },
   { label: "Database Management", Icon: Database },
   { label: "Software Projects", Icon: Laptop },
+  { label: "Pentesting", Icon: Rocket },
 ];
 
 function Detail({ Icon, label, children }) {
@@ -158,10 +165,8 @@ export default function About() {
           </h2>
 
           <p>
-            Every developer starts somewhere. My journey is about
-            curiosity, continuous learning, and turning ideas into
-            working projects. Each challenge is an opportunity to
-            learn something new and become better at what I do.
+            It all started with a fat screen monitor and a curious mind. I was amazed by what technology could.
+            My mind was filled with questions, and I wanted to understand how things worked. This curiosity led me to explore various fields in technology, from programming to networking, and even game development. Each step of the way, I learned something new and exciting, fueling my passion for creating and innovating.
           </p>
 
           <div className="about-quote">
