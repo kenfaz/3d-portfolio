@@ -11,6 +11,7 @@ import About from "./pages/About";
 import Projects from "./pages/Projects";
 import ProjectDetails from "./pages/ProjectDetails";
 import Skills from "./pages/Skills";
+import Experience from "./pages/Experience";
 
 export default function App() {
   return (
@@ -24,6 +25,7 @@ export default function App() {
           path="/projects/:projectId"
           element={<ProjectDetails />}
         />
+        <Route path="/experience" element={<Experience />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </BrowserRouter>

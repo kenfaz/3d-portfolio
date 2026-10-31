@@ -41,8 +41,8 @@ export default function Home() {
             ["Home", "#home"],
             ["About", "/about"],
             ["Skills", "/skills"],
-            ["Experience", "#experience"],
-            ["Projects", "#projects"],
+            ["Experience", "/experience"],
+            ["Projects", "/projects"],
             ["Education", "#education"],
             ["Contact", "#contact"],
           ].map(([label, href]) => (
