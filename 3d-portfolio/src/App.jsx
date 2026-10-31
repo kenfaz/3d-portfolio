@@ -12,6 +12,7 @@ import Projects from "./pages/Projects";
 import ProjectDetails from "./pages/ProjectDetails";
 import Skills from "./pages/Skills";
 import Experience from "./pages/Experience";
+import Education from "./pages/Education";
 
 export default function App() {
   return (
@@ -26,6 +27,7 @@ export default function App() {
           element={<ProjectDetails />}
         />
         <Route path="/experience" element={<Experience />} />
+        <Route path="/education" element={<Education />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </BrowserRouter>

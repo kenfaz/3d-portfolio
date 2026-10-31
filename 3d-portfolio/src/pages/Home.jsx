@@ -43,7 +43,7 @@ export default function Home() {
             ["Skills", "/skills"],
             ["Experience", "/experience"],
             ["Projects", "/projects"],
-            ["Education", "#education"],
+            ["Education", "/education"],
             ["Contact", "#contact"],
           ].map(([label, href]) => (
             <a
