@@ -1,0 +1,149 @@
+
+.project-detail-page {
+  --detail-accent: #8b83ff;
+  min-height: 100vh;
+  padding: 55px 7%;
+  color: #f1f4ff;
+  background:
+    radial-gradient(ellipse at 80% 15%, rgba(88, 74, 185, 0.18), transparent 35%),
+    #070b18;
+  font-family: "DM Sans", sans-serif;
+}
+
+.detail-back,
+.detail-return {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  color: #b4bfff;
+  font-size: 12px;
+}
+
+.detail-hero {
+  max-width: 850px;
+  margin: 75px auto 65px;
+  text-align: center;
+}
+
+.detail-kicker {
+  color: var(--detail-accent);
+  font-size: 10px;
+  letter-spacing: 2px;
+}
+
+.detail-hero h1 {
+  margin: 20px 0 10px;
+  overflow-wrap: anywhere;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: clamp(36px, 7vw, 68px);
+  letter-spacing: -2px;
+}
+
+.detail-subtitle {
+  color: #aab7d5;
+  font-size: 16px;
+}
+
+.detail-meta,
+.detail-tech-list,
+.detail-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.detail-meta {
+  margin-top: 25px;
+}
+
+.detail-meta span,
+.detail-tech-list span {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 9px 12px;
+  border: 1px solid rgba(137, 157, 255, 0.2);
+  border-radius: 30px;
+  color: #c5d1f0;
+  background: rgba(19, 29, 58, 0.65);
+  font-size: 11px;
+}
+
+.detail-section {
+  max-width: 850px;
+  margin: 0 auto 40px;
+  padding: 26px;
+  border: 1px solid rgba(137, 157, 255, 0.17);
+  border-radius: 16px;
+  background: rgba(13, 21, 46, 0.72);
+}
+
+.detail-section h2 {
+  margin-top: 0;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 22px;
+}
+
+.detail-section > p {
+  color: #aab7d5;
+  font-size: 13px;
+  line-height: 1.9;
+}
+
+.detail-tech-list {
+  justify-content: flex-start;
+}
+
+.detail-tech-list span {
+  border-color: color-mix(in srgb, var(--detail-accent), transparent 70%);
+}
+
+.detail-actions {
+  justify-content: flex-start;
+  margin-top: 18px;
+}
+
+.detail-actions a,
+.detail-return {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 11px 14px;
+  border: 1px solid rgba(137, 157, 255, 0.2);
+  border-radius: 9px;
+  color: #dce5ff;
+  font-size: 12px;
+}
+
+.detail-actions a:hover,
+.detail-return:hover {
+  border-color: var(--detail-accent);
+}
+
+.detail-unavailable {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: #aab7d5;
+  font-size: 12px;
+}
+
+.detail-return {
+  width: fit-content;
+  margin: 0 auto;
+}
+
+@media (max-width: 600px) {
+  .project-detail-page {
+    padding: 32px 5%;
+  }
+
+  .detail-hero {
+    margin: 55px auto 40px;
+  }
+
+  .detail-section {
+    padding: 20px;
+  }
+}

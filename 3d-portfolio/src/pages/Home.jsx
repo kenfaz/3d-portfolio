@@ -40,7 +40,7 @@ export default function Home() {
           {[
             ["Home", "#home"],
             ["About", "/about"],
-            ["Skills", "#skills"],
+            ["Skills", "/skills"],
             ["Experience", "#experience"],
             ["Projects", "#projects"],
             ["Education", "#education"],
