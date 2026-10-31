@@ -53,7 +53,7 @@ a:focus-visible {
   --panel: rgba(12, 19, 43, 0.7);
 
   position: relative;
-  min-height: 100svh;
+  min-height: calc(100svh - 88px);
   overflow: hidden;
   isolation: isolate;
   color: var(--text);
@@ -99,6 +99,11 @@ a:focus-visible {
 /* Navigation */
 
 .navbar {
+  --text: #f4f6ff;
+  --muted: #a3aecb;
+  --border: rgba(157, 177, 255, 0.18);
+  --panel: rgba(12, 19, 43, 0.7);
+
   position: relative;
   z-index: 10;
   display: flex;
@@ -110,6 +115,15 @@ a:focus-visible {
   margin: 0 auto;
   padding: 20px 6%;
   border-bottom: 1px solid var(--border);
+}
+
+.navbar.light {
+  --text: #11172d;
+  --muted: #505d7a;
+  --border: rgba(55, 75, 140, 0.2);
+  --panel: rgba(255, 255, 255, 0.75);
+
+  background: #edf2ff;
 }
 
 .brand {
@@ -526,8 +540,8 @@ a:focus-visible {
 /* Light theme */
 
 .light .button-secondary,
-.light .nav-cv,
-.light .theme-toggle {
+.navbar.light .nav-cv,
+.navbar.light .theme-toggle {
   background: rgba(255, 255, 255, 0.7);
 }
 
@@ -579,6 +593,10 @@ a:focus-visible {
 }
 
 @media (max-width: 760px) {
+  .home {
+    min-height: calc(100svh - 74px);
+  }
+
   .navbar {
     min-height: 74px;
     padding: 15px 5%;

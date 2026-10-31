@@ -4,73 +4,15 @@ import {
   CodeXml,
   Download,
   Mail,
-  Menu,
-  Moon,
   Rocket,
-  Sun,
 } from "lucide-react";
 
-import { useState } from "react";
 import SpaceScene from "../components/SpaceScene";
 
-export default function Home() {
-  const [darkMode, setDarkMode] = useState(true);
-  const [menuOpen, setMenuOpen] = useState(false);
-
+export default function Home({ darkMode }) {
   return (
     <main className={darkMode ? "home dark" : "home light"}>
       <div className="space-background" aria-hidden="true" />
-
-      <header className="navbar">
-        <a className="brand" href="#home" aria-label="Home">
-          <span className="brand-icon">✦</span>
-          <span>MyUniverse<span className="brand-dot">.</span></span>
-        </a>
-
-        <button
-          className="mobile-menu-button"
-          onClick={() => setMenuOpen(!menuOpen)}
-          aria-label="Toggle navigation"
-          aria-expanded={menuOpen}
-        >
-          {menuOpen ? <ArrowRight /> : <Menu />}
-        </button>
-
-        <nav className={menuOpen ? "nav-links open" : "nav-links"}>
-          {[
-            ["Home", "#home"],
-            ["About", "/about"],
-            ["Skills", "/skills"],
-            ["Experience", "/experience"],
-            ["Projects", "/projects"],
-            ["Education", "/education"],
-            ["Contact", "#contact"],
-          ].map(([label, href]) => (
-            <a
-              key={label}
-              href={href}
-              className={label === "Home" ? "active" : ""}
-              onClick={() => setMenuOpen(false)}
-            >
-              {label}
-            </a>
-          ))}
-        </nav>
-
-        <div className="nav-actions">
-          <a className="nav-cv" href="/cv.pdf" download>
-            CV <Download size={15} />
-          </a>
-
-          <button
-            className="theme-toggle"
-            onClick={() => setDarkMode(!darkMode)}
-            aria-label={`Switch to ${darkMode ? "light" : "dark"} mode`}
-          >
-            {darkMode ? <Sun size={18} /> : <Moon size={18} />}
-          </button>
-        </div>
-      </header>
 
       <section className="hero" id="home">
         <div className="hero-copy">
@@ -117,7 +59,7 @@ export default function Home() {
             </a>
           </div>
 
-          <a className="contact-link" href="#contact">
+          <a className="contact-link" href="/contact">
             <Mail size={16} />
             Let's connect
           </a>
