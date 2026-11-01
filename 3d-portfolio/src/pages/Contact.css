@@ -157,6 +157,7 @@
   box-shadow:
     inset -16px -15px 30px rgba(3, 5, 22, 0.7),
     0 0 50px rgba(126, 103, 255, 0.24);
+  animation: contact-planet-drift 8s ease-in-out infinite;
 }
 
 .contact-planet-shine {
@@ -195,15 +196,89 @@
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.22);
 }
 
-.contact-floating-mail {
-  top: 13%;
-  left: 10%;
+.contact-icon-orbit {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 85%;
+  height: 30%;
+  border-radius: 50%;
+  animation: contact-icon-orbit-one 20s linear infinite;
+}
+
+.contact-icon-orbit-two {
+  width: 100%;
+  height: 39%;
+  animation-name: contact-icon-orbit-two;
+  animation-duration: 27s;
+}
+
+.contact-icon-orbit .contact-floating-icon {
+  top: 50%;
+  left: 0;
+  transform: translate(-50%, -50%);
+  animation: contact-icon-counter-orbit-one 20s linear infinite;
+}
+
+.contact-icon-orbit-two .contact-floating-icon {
+  animation-name: contact-icon-counter-orbit-two;
+  animation-duration: 27s;
+  animation-direction: reverse;
 }
 
 .contact-floating-message {
-  right: 4%;
-  bottom: 25%;
   color: #78dfff;
+}
+
+@keyframes contact-planet-drift {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-3deg);
+  }
+
+  50% {
+    transform: translateY(-10px) rotate(3deg);
+  }
+}
+
+@keyframes contact-icon-orbit-one {
+  from {
+    transform: translate(-50%, -50%) rotate(-24deg) rotate(0deg);
+  }
+
+  to {
+    transform: translate(-50%, -50%) rotate(-24deg) rotate(360deg);
+  }
+}
+
+@keyframes contact-icon-orbit-two {
+  from {
+    transform: translate(-50%, -50%) rotate(36deg) rotate(0deg);
+  }
+
+  to {
+    transform: translate(-50%, -50%) rotate(36deg) rotate(360deg);
+  }
+}
+
+@keyframes contact-icon-counter-orbit-one {
+  from {
+    transform: translate(-50%, -50%) rotate(24deg);
+  }
+
+  to {
+    transform: translate(-50%, -50%) rotate(-336deg);
+  }
+}
+
+@keyframes contact-icon-counter-orbit-two {
+  from {
+    transform: translate(-50%, -50%) rotate(-36deg);
+  }
+
+  to {
+    transform: translate(-50%, -50%) rotate(-396deg);
+  }
 }
 
 .contact-star {
@@ -684,6 +759,12 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .contact-planet,
+  .contact-icon-orbit,
+  .contact-icon-orbit .contact-floating-icon {
+    animation: none;
+  }
+
   .contact-spinner {
     animation: none;
   }

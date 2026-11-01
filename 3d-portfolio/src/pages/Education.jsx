@@ -20,6 +20,7 @@ const education = [
     level: "College",
     program: "Bachelor of Science in Information Technology",
     school: "City College of Calamba",
+    logo: "/ccc_logo.png",
     period: "2024 - 2028",
     description:
       "Learned Data structures, Algorithms, Web Development, Database Management, and Software Engineering principles. Gained hands-on experience through projects and internships.",
@@ -31,6 +32,7 @@ const education = [
     level: "Senior High School",
     strand: "TVL - Information and Communication Technology (ICT)",
     school: "Laguna College of Business and Arts",
+    logo: "/lcba_logo_cropped.png",
     period: "2022 - 2024",
     description: "Acquired my NC2 in Computer Systems Servicing. Gained practical skills in computer hardware, software installation, and troubleshooting.",
     status: "Finished",
@@ -131,11 +133,15 @@ export default function Education() {
           <div className="education-planet">
             <div className="education-planet-highlight" />
           </div>
-          <div className="education-float-icon float-book">
-            <BookOpen size={22} />
+          <div className="education-icon-orbit education-icon-orbit-one">
+            <div className="education-float-icon float-book">
+              <BookOpen size={22} />
+            </div>
           </div>
-          <div className="education-float-icon float-award">
-            <Award size={22} />
+          <div className="education-icon-orbit education-icon-orbit-two">
+            <div className="education-float-icon float-award">
+              <Award size={22} />
+            </div>
           </div>
           <span className="education-star star-one" />
           <span className="education-star star-two" />
@@ -174,9 +180,18 @@ export default function Education() {
 
               <div className="education-timeline-card">
                 <div className="education-entry-top">
-                  <span className="education-entry-level">
-                    {item.level}
-                  </span>
+                  <div className="education-entry-identity">
+                    {item.logo && (
+                      <img
+                        className="education-entry-school-logo"
+                        src={item.logo}
+                        alt={`${item.school} logo`}
+                      />
+                    )}
+                    <span className="education-entry-level">
+                      {item.level}
+                    </span>
+                  </div>
                   <span className="education-entry-period">
                     <CalendarDays size={14} aria-hidden="true" />
                     {item.period}
@@ -184,7 +199,9 @@ export default function Education() {
                 </div>
 
                 <h3>{item.program}</h3>
-                <p className="education-school-name">{item.school}</p>
+                <p className="education-school-name">
+                  {item.school}
+                </p>
                 <p className="education-entry-description">
                   {item.description}
                 </p>

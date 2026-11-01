@@ -54,8 +54,7 @@ export default function Navbar({ darkMode, onToggleTheme }) {
   return (
     <header className={`navbar${isHome && !darkMode ? " light" : ""}`}>
       <Link className="brand" to="/" aria-label="Home">
-        <span className="brand-icon">✦</span>
-        <span>MyUniverse<span className="brand-dot">.</span></span>
+        <span>HelloWorld<span className="brand-dot">.</span></span>
       </Link>
 
       <button

@@ -159,6 +159,7 @@
   box-shadow:
     inset -16px -15px 30px rgba(3, 5, 22, 0.7),
     0 0 50px rgba(126, 103, 255, 0.24);
+  animation: education-planet-drift 8s ease-in-out infinite;
 }
 
 .education-planet-highlight {
@@ -197,15 +198,89 @@
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.22);
 }
 
-.float-book {
-  top: 15%;
-  left: 10%;
+.education-icon-orbit {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 84%;
+  height: 30%;
+  border-radius: 50%;
+  animation: education-icon-orbit-one 20s linear infinite;
+}
+
+.education-icon-orbit-two {
+  width: 100%;
+  height: 39%;
+  animation-name: education-icon-orbit-two;
+  animation-duration: 27s;
+}
+
+.education-icon-orbit .education-float-icon {
+  top: 50%;
+  left: 0;
+  transform: translate(-50%, -50%);
+  animation: education-icon-counter-orbit-one 20s linear infinite;
+}
+
+.education-icon-orbit-two .education-float-icon {
+  animation-name: education-icon-counter-orbit-two;
+  animation-duration: 27s;
+  animation-direction: reverse;
 }
 
 .float-award {
-  right: 5%;
-  bottom: 24%;
   color: #78dfff;
+}
+
+@keyframes education-planet-drift {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-3deg);
+  }
+
+  50% {
+    transform: translateY(-10px) rotate(3deg);
+  }
+}
+
+@keyframes education-icon-orbit-one {
+  from {
+    transform: translate(-50%, -50%) rotate(-24deg) rotate(0deg);
+  }
+
+  to {
+    transform: translate(-50%, -50%) rotate(-24deg) rotate(360deg);
+  }
+}
+
+@keyframes education-icon-orbit-two {
+  from {
+    transform: translate(-50%, -50%) rotate(36deg) rotate(0deg);
+  }
+
+  to {
+    transform: translate(-50%, -50%) rotate(36deg) rotate(360deg);
+  }
+}
+
+@keyframes education-icon-counter-orbit-one {
+  from {
+    transform: translate(-50%, -50%) rotate(24deg);
+  }
+
+  to {
+    transform: translate(-50%, -50%) rotate(-336deg);
+  }
+}
+
+@keyframes education-icon-counter-orbit-two {
+  from {
+    transform: translate(-50%, -50%) rotate(-36deg);
+  }
+
+  to {
+    transform: translate(-50%, -50%) rotate(-396deg);
+  }
 }
 
 .education-star {
@@ -329,6 +404,18 @@
   margin-bottom: 17px;
 }
 
+.education-entry-identity {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.education-entry-school-logo {
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+}
+
 .education-entry-level {
   padding: 6px 10px;
   color: #aaa3ff;
@@ -355,6 +442,9 @@
 }
 
 .education-school-name {
+  display: flex;
+  align-items: center;
+  gap: 10px;
   margin: 0;
   color: #a9a1ff;
   font-size: 0.91rem;
@@ -710,6 +800,12 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .education-planet,
+  .education-icon-orbit,
+  .education-icon-orbit .education-float-icon {
+    animation: none;
+  }
+
   .education-hero-link,
   .education-credential-card {
     transition: none;

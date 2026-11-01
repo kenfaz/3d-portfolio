@@ -171,11 +171,15 @@ export default function Contact() {
           <div className="contact-planet">
             <div className="contact-planet-shine" />
           </div>
-          <div className="contact-floating-icon contact-floating-mail">
-            <Mail size={22} />
+          <div className="contact-icon-orbit contact-icon-orbit-one">
+            <div className="contact-floating-icon contact-floating-mail">
+              <Mail size={22} />
+            </div>
           </div>
-          <div className="contact-floating-icon contact-floating-message">
-            <MessageCircle size={22} />
+          <div className="contact-icon-orbit contact-icon-orbit-two">
+            <div className="contact-floating-icon contact-floating-message">
+              <MessageCircle size={22} />
+            </div>
           </div>
           <span className="contact-star contact-star-one" />
           <span className="contact-star contact-star-two" />

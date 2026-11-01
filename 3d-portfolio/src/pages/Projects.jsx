@@ -42,9 +42,17 @@ function ProjectCard({ project, index }) {
         <div className="project-orbit project-orbit-a" aria-hidden="true" />
         <div className="project-orbit project-orbit-b" aria-hidden="true" />
 
-        <div className="project-planet" aria-hidden="true">
-          <Icon size={42} strokeWidth={1.25} />
-        </div>
+        {project.thumbnail ? (
+          <img
+            className="project-card-thumbnail"
+            src={project.thumbnail}
+            alt={`${project.title} project thumbnail`}
+          />
+        ) : (
+          <div className="project-planet" aria-hidden="true">
+            <Icon size={42} strokeWidth={1.25} />
+          </div>
+        )}
 
         <span className="project-number">
           MISSION {String(index + 1).padStart(2, "0")}

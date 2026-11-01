@@ -112,16 +112,14 @@ export default function About() {
           </h1>
 
           <p className="about-lead">
-            Hello, I'm <strong>{profile.name}</strong>. I'm an aspiring
-            developer passionate about technology, problem-solving, and
-            creating digital experiences that serve a purpose.
+            Hello, I'm <strong>{profile.name}</strong>. I'm an ICT graduate and now taking my degree in Information Technology.
+            I have a strong passion and curiosity for technology, and I like to reverse engineer things to understand them in a deeper level.
           </p>
 
           <p className="about-description">
             I enjoy exploring new technologies, developing projects,
             and continuously improving my technical skills. My goal
-            is to turn what I learn into practical solutions and
-            meaningful experiences.
+            is to create practical solutions that actually solve real world problems. Especially in communities that needs technological support.
           </p>
 
           <Link className="about-cta" to="/#projects">
