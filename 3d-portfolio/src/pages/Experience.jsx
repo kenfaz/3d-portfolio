@@ -157,11 +157,15 @@ export default function Experience() {
             <div className="experience-art-crater crater-two" />
             <div className="experience-art-crater crater-three" />
           </div>
-          <div className="experience-art-icon art-icon-briefcase">
-            <BriefcaseBusiness size={22} />
+          <div className="experience-icon-orbit experience-icon-orbit-one">
+            <div className="experience-art-icon art-icon-briefcase">
+              <BriefcaseBusiness size={22} />
+            </div>
           </div>
-          <div className="experience-art-icon art-icon-rocket">
-            <Rocket size={22} />
+          <div className="experience-icon-orbit experience-icon-orbit-two">
+            <div className="experience-art-icon art-icon-rocket">
+              <Rocket size={22} />
+            </div>
           </div>
           <span className="experience-art-star star-a" />
           <span className="experience-art-star star-b" />

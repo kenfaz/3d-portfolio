@@ -94,8 +94,12 @@ export default function About() {
               <img src="/profile.jpg" alt={`${profile.name} profile`} />
             </div>
 
-            <span className="about-moon about-moon-one" />
-            <span className="about-moon about-moon-two" />
+            <div className="about-moon-orbit about-moon-orbit-one" aria-hidden="true">
+              <span className="about-moon about-moon-one" />
+            </div>
+            <div className="about-moon-orbit about-moon-orbit-two" aria-hidden="true">
+              <span className="about-moon about-moon-two" />
+            </div>
           </div>
         </div>
 

@@ -153,14 +153,20 @@ export default function Skills() {
           <div className="skills-planet">
             <div className="skills-planet-shine" />
           </div>
-          <div className="skills-floating-icon skills-floating-code">
-            <Code2 size={23} />
+          <div className="skills-icon-orbit skills-icon-orbit-one">
+            <div className="skills-floating-icon skills-floating-code">
+              <Code2 size={23} />
+            </div>
           </div>
-          <div className="skills-floating-icon skills-floating-layers">
-            <Layers3 size={22} />
+          <div className="skills-icon-orbit skills-icon-orbit-two">
+            <div className="skills-floating-icon skills-floating-layers">
+              <Layers3 size={22} />
+            </div>
           </div>
-          <div className="skills-floating-icon skills-floating-terminal">
-            <Terminal size={22} />
+          <div className="skills-icon-orbit skills-icon-orbit-three">
+            <div className="skills-floating-icon skills-floating-terminal">
+              <Terminal size={22} />
+            </div>
           </div>
           <span className="skills-star-dot skills-dot-one" />
           <span className="skills-star-dot skills-dot-two" />

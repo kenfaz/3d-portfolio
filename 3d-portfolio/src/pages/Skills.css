@@ -163,6 +163,7 @@
   box-shadow:
     inset -16px -15px 30px rgba(3, 5, 22, 0.7),
     0 0 50px rgba(126, 103, 255, 0.24);
+  animation: skills-planet-drift 8s ease-in-out infinite;
 }
 
 .skills-planet-shine {
@@ -205,21 +206,91 @@
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.22);
 }
 
+.skills-icon-orbit {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 83%;
+  height: 29%;
+  border-radius: 50%;
+  animation: skills-icon-orbit 18s linear infinite;
+}
+
+.skills-icon-orbit-two {
+  width: 99%;
+  height: 39%;
+  animation-duration: 24s;
+  animation-direction: reverse;
+}
+
+.skills-icon-orbit-three {
+  width: 72%;
+  height: 52%;
+  animation-duration: 30s;
+}
+
+.skills-icon-orbit .skills-floating-icon {
+  top: 50%;
+  left: 0;
+  transform: translate(-50%, -50%);
+  animation: skills-icon-counter-orbit 18s linear infinite;
+}
+
+.skills-icon-orbit-two .skills-floating-icon {
+  animation-duration: 24s;
+  animation-direction: reverse;
+}
+
+.skills-icon-orbit-three .skills-floating-icon {
+  animation-duration: 30s;
+}
+
 .skills-floating-code {
-  top: 15%;
-  left: 11%;
+  top: auto;
+  left: auto;
 }
 
 .skills-floating-layers {
-  right: 4%;
-  bottom: 26%;
+  right: auto;
+  bottom: auto;
   color: #78dfff;
 }
 
 .skills-floating-terminal {
-  bottom: 8%;
-  left: 25%;
+  bottom: auto;
+  left: auto;
   color: #c3a6ff;
+}
+
+@keyframes skills-planet-drift {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-3deg);
+  }
+
+  50% {
+    transform: translateY(-10px) rotate(3deg);
+  }
+}
+
+@keyframes skills-icon-orbit {
+  from {
+    transform: translate(-50%, -50%) rotate(-24deg) rotate(0deg);
+  }
+
+  to {
+    transform: translate(-50%, -50%) rotate(-24deg) rotate(360deg);
+  }
+}
+
+@keyframes skills-icon-counter-orbit {
+  from {
+    transform: translate(-50%, -50%) rotate(24deg);
+  }
+
+  to {
+    transform: translate(-50%, -50%) rotate(-336deg);
+  }
 }
 
 .skills-star-dot {
@@ -672,6 +743,12 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .skills-planet,
+  .skills-icon-orbit,
+  .skills-icon-orbit .skills-floating-icon {
+    animation: none;
+  }
+
   .skills-group-card,
   .skills-filter {
     transition: none;

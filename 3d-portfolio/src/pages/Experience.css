@@ -161,6 +161,7 @@
   box-shadow:
     inset -18px -17px 32px rgba(3, 5, 22, 0.7),
     0 0 55px rgba(126, 103, 255, 0.23);
+  animation: experience-planet-drift 8s ease-in-out infinite;
 }
 
 .experience-art-crater {
@@ -225,15 +226,99 @@
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.22);
 }
 
+.experience-icon-orbit {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 86%;
+  height: 31%;
+  border-radius: 50%;
+  animation: experience-icon-orbit-one 20s linear infinite;
+}
+
+.experience-icon-orbit-two {
+  width: 105%;
+  height: 39%;
+  animation-name: experience-icon-orbit-two;
+  animation-duration: 27s;
+  animation-direction: reverse;
+}
+
+.experience-icon-orbit .experience-art-icon {
+  top: 50%;
+  left: 0;
+  right: auto;
+  bottom: auto;
+  transform: translate(-50%, -50%);
+  animation: experience-icon-counter-orbit-one 20s linear infinite;
+}
+
+.experience-icon-orbit-two .experience-art-icon {
+  animation-name: experience-icon-counter-orbit-two;
+  animation-duration: 27s;
+  animation-direction: reverse;
+}
+
 .art-icon-briefcase {
-  top: 13%;
-  left: 11%;
+  top: auto;
+  left: auto;
 }
 
 .art-icon-rocket {
-  right: 4%;
-  bottom: 23%;
+  right: auto;
+  bottom: auto;
   color: #78dfff;
+}
+
+@keyframes experience-planet-drift {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-3deg);
+  }
+
+  50% {
+    transform: translateY(-10px) rotate(3deg);
+  }
+}
+
+@keyframes experience-icon-orbit-one {
+  from {
+    transform: translate(-50%, -50%) rotate(-26deg) rotate(0deg);
+  }
+
+  to {
+    transform: translate(-50%, -50%) rotate(-26deg) rotate(360deg);
+  }
+}
+
+@keyframes experience-icon-orbit-two {
+  from {
+    transform: translate(-50%, -50%) rotate(36deg) rotate(0deg);
+  }
+
+  to {
+    transform: translate(-50%, -50%) rotate(36deg) rotate(360deg);
+  }
+}
+
+@keyframes experience-icon-counter-orbit-one {
+  from {
+    transform: translate(-50%, -50%) rotate(26deg);
+  }
+
+  to {
+    transform: translate(-50%, -50%) rotate(-334deg);
+  }
+}
+
+@keyframes experience-icon-counter-orbit-two {
+  from {
+    transform: translate(-50%, -50%) rotate(-36deg);
+  }
+
+  to {
+    transform: translate(-50%, -50%) rotate(-396deg);
+  }
 }
 
 .experience-art-star {
@@ -734,6 +819,12 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .experience-art-planet,
+  .experience-icon-orbit,
+  .experience-icon-orbit .experience-art-icon {
+    animation: none;
+  }
+
   .experience-scroll-link,
   .experience-project-link,
   .experience-closing-link,

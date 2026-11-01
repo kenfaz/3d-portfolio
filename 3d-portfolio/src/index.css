@@ -25,6 +25,21 @@ body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
+  cursor: url("/scythe.ico"), auto;
+}
+
+a,
+button,
+select,
+summary,
+[role="button"] {
+  cursor: url("/scythe.ico"), pointer;
+}
+
+input,
+textarea,
+[contenteditable="true"] {
+  cursor: text;
 }
 
 button,
@@ -104,6 +119,7 @@ a:focus-visible {
   --muted: #a3aecb;
   --border: rgba(157, 177, 255, 0.18);
   --panel: rgba(12, 19, 43, 0.7);
+  --navbar-background: rgba(7, 11, 24, 0.92);
 
   position: sticky;
   top: 0;
@@ -116,8 +132,21 @@ a:focus-visible {
   min-height: 88px;
   margin: 0 auto;
   padding: 20px 6%;
+  isolation: isolate;
+  background: transparent;
+}
+
+.navbar::before {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 100vw;
   border-bottom: 1px solid var(--border);
-  background: rgba(7, 11, 24, 0.92);
+  background: var(--navbar-background);
+  content: "";
+  transform: translateX(-50%);
   backdrop-filter: blur(16px);
 }
 
@@ -126,8 +155,10 @@ a:focus-visible {
   --muted: #505d7a;
   --border: rgba(55, 75, 140, 0.2);
   --panel: rgba(255, 255, 255, 0.75);
+  --navbar-background: #edf2ff;
 
-  background: #edf2ff;
+  background: transparent;
+  color: var(--text);
 }
 
 .brand {
@@ -208,9 +239,19 @@ a:focus-visible {
   align-items: center;
   gap: 8px;
   padding: 10px 14px;
-  border: 1px solid var(--border);
+  border: 1px solid rgba(255, 218, 91, 0.7);
   border-radius: 9px;
+  color: #251b00;
+  background: linear-gradient(110deg, #ffd84d, #ffbb38);
+  box-shadow: 0 6px 20px rgba(255, 193, 61, 0.16);
   font-size: 13px;
+  transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
+}
+
+.nav-cv:hover {
+  background: linear-gradient(110deg, #ffe477, #ffca56);
+  box-shadow: 0 8px 24px rgba(255, 193, 61, 0.28);
+  transform: translateY(-1px);
 }
 
 .theme-toggle,
@@ -364,11 +405,18 @@ a:focus-visible {
 }
 
 .button-secondary {
-  background: var(--panel);
+  border-color: rgba(255, 218, 91, 0.7);
+  color: #251b00;
+  background: linear-gradient(110deg, #ffd84d, #ffbb38);
+  box-shadow: 0 6px 20px rgba(255, 193, 61, 0.16);
+  transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
 }
 
 .button-secondary:hover {
-  border-color: #8c84ff;
+  border-color: rgba(255, 218, 91, 0.7);
+  background: linear-gradient(110deg, #ffe477, #ffca56);
+  box-shadow: 0 8px 24px rgba(255, 193, 61, 0.28);
+  transform: translateY(-1px);
 }
 
 .contact-link {
@@ -551,8 +599,6 @@ a:focus-visible {
 
 /* Light theme */
 
-.light .button-secondary,
-.navbar.light .nav-cv,
 .navbar.light .theme-toggle {
   background: rgba(255, 255, 255, 0.7);
 }
@@ -753,6 +799,162 @@ a:focus-visible {
   .hero-tags {
     letter-spacing: 1.4px;
   }
+}
+
+.portfolio.light-mode .about-page,
+.portfolio.light-mode .skills-page,
+.portfolio.light-mode .experience-page,
+.portfolio.light-mode .projects-page,
+.portfolio.light-mode .education-page,
+.portfolio.light-mode .contact-page {
+  color: #17213a;
+  background-color: #f3f6ff;
+}
+
+.portfolio.light-mode .about-page {
+  --about-text: #17213a;
+  --about-muted: #52617b;
+  --about-border: rgba(57, 78, 130, 0.18);
+  --about-panel: rgba(255, 255, 255, 0.86);
+
+  background:
+    radial-gradient(ellipse at 8% 24%, rgba(116, 145, 255, 0.14), transparent 32%),
+    radial-gradient(ellipse at 94% 76%, rgba(168, 126, 255, 0.12), transparent 32%),
+    #f3f6ff;
+}
+
+.portfolio.light-mode .skills-page {
+  --skills-bg: #f3f6ff;
+  --skills-panel: rgba(255, 255, 255, 0.86);
+  --skills-border: rgba(57, 78, 130, 0.18);
+  --skills-text: #17213a;
+  --skills-muted: #52617b;
+
+  background:
+    radial-gradient(ellipse at 12% 5%, rgba(133, 119, 255, 0.12), transparent 38%),
+    radial-gradient(ellipse at 90% 25%, rgba(74, 175, 221, 0.1), transparent 34%),
+    var(--skills-bg);
+}
+
+.portfolio.light-mode .experience-page {
+  --exp-bg: #f3f6ff;
+  --exp-panel: rgba(255, 255, 255, 0.86);
+  --exp-border: rgba(57, 78, 130, 0.18);
+  --exp-text: #17213a;
+  --exp-muted: #52617b;
+
+  background:
+    radial-gradient(ellipse at 12% 5%, rgba(133, 119, 255, 0.12), transparent 38%),
+    radial-gradient(ellipse at 90% 25%, rgba(74, 175, 221, 0.1), transparent 34%),
+    var(--exp-bg);
+}
+
+.portfolio.light-mode .projects-page {
+  --projects-text: #17213a;
+  --projects-muted: #52617b;
+  --projects-border: rgba(57, 78, 130, 0.18);
+  --projects-panel: rgba(255, 255, 255, 0.86);
+
+  background:
+    radial-gradient(ellipse at 15% 12%, rgba(103, 128, 255, 0.13), transparent 30%),
+    radial-gradient(ellipse at 92% 40%, rgba(174, 123, 236, 0.1), transparent 28%),
+    #f3f6ff;
+}
+
+.portfolio.light-mode .education-page {
+  --edu-bg: #f3f6ff;
+  --edu-panel: rgba(255, 255, 255, 0.86);
+  --edu-border: rgba(57, 78, 130, 0.18);
+  --edu-text: #17213a;
+  --edu-muted: #52617b;
+
+  background:
+    radial-gradient(ellipse at 12% 5%, rgba(133, 119, 255, 0.12), transparent 38%),
+    radial-gradient(ellipse at 90% 25%, rgba(74, 175, 221, 0.1), transparent 34%),
+    var(--edu-bg);
+}
+
+.portfolio.light-mode .contact-page {
+  --contact-bg: #f3f6ff;
+  --contact-panel: rgba(255, 255, 255, 0.88);
+  --contact-border: rgba(57, 78, 130, 0.18);
+  --contact-text: #17213a;
+  --contact-muted: #52617b;
+
+  background:
+    radial-gradient(ellipse at 12% 5%, rgba(133, 119, 255, 0.12), transparent 38%),
+    radial-gradient(ellipse at 90% 25%, rgba(74, 175, 221, 0.1), transparent 34%),
+    var(--contact-bg);
+}
+
+.portfolio.light-mode main:not(.home) :is(h1, h2, h3, h4, p, span, small, strong, label, a, button, li, blockquote) {
+  color: #17213a;
+}
+
+.portfolio.light-mode main:not(.home) svg {
+  color: #5362a1;
+}
+
+.portfolio.light-mode .about-cta svg,
+.portfolio.light-mode .experience-art-icon svg,
+.portfolio.light-mode .skills-floating-icon svg,
+.portfolio.light-mode .education-float-icon svg,
+.portfolio.light-mode .contact-floating-icon svg,
+.portfolio.light-mode .contact-submit-button svg,
+.portfolio.light-mode .project-planet svg {
+  color: #fff;
+}
+
+.portfolio.light-mode .about-info-card,
+.portfolio.light-mode .skills-search,
+.portfolio.light-mode .skills-group-card,
+.portfolio.light-mode .skills-note,
+.portfolio.light-mode .experience-entry-card,
+.portfolio.light-mode .projects-search,
+.portfolio.light-mode .projects-technology-select select,
+.portfolio.light-mode .project-card,
+.portfolio.light-mode .education-timeline-card,
+.portfolio.light-mode .education-credential-card,
+.portfolio.light-mode .education-achievement-card,
+.portfolio.light-mode .contact-info-panel,
+.portfolio.light-mode .contact-form-panel {
+  border-color: rgba(57, 78, 130, 0.18);
+  background: rgba(255, 255, 255, 0.88);
+  box-shadow: 0 16px 42px rgba(38, 58, 112, 0.08);
+}
+
+.portfolio.light-mode .about-cta,
+.portfolio.light-mode .contact-submit-button {
+  color: #fff;
+}
+
+.portfolio.light-mode .skills-filter,
+.portfolio.light-mode .experience-filter,
+.portfolio.light-mode .projects-categories button {
+  color: #394663;
+  background-color: rgba(255, 255, 255, 0.78);
+}
+
+.portfolio.light-mode .skills-filter.active,
+.portfolio.light-mode .projects-categories button.selected {
+  color: #30286d;
+  background-color: #e7e4ff;
+}
+
+.portfolio.light-mode .projects-technology-select select,
+.portfolio.light-mode .projects-technology-select option {
+  color: #17213a;
+  background-color: #fff;
+}
+
+a,
+button,
+select,
+summary,
+[role="button"],
+.space-scene canvas,
+.space-scene canvas:active {
+  cursor: url("/scythe.ico"), auto !important;
 }
 
 @media (prefers-reduced-motion: reduce) {

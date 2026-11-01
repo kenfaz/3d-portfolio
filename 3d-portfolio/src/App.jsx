@@ -36,7 +36,7 @@ function ScrollToTop() {
 
 function Portfolio({ darkMode }) {
   return (
-    <>
+    <div className={`portfolio${darkMode ? "" : " light-mode"}`}>
       <Home darkMode={darkMode} />
       <About />
       <Skills />
@@ -44,7 +44,7 @@ function Portfolio({ darkMode }) {
       <Projects />
       <Education />
       <Contact />
-    </>
+    </div>
   );
 }
 
