@@ -122,7 +122,7 @@ export default function Experience() {
   }
 
   return (
-    <main className="experience-page">
+    <main className="experience-page" id="experience">
       <div className="experience-stars" aria-hidden="true" />
       <div className="experience-orbit experience-orbit-a" aria-hidden="true" />
       <div className="experience-orbit experience-orbit-b" aria-hidden="true" />
@@ -325,7 +325,7 @@ export default function Experience() {
             development projects.
           </p>
         </div>
-        <Link to="/projects" className="experience-closing-link">
+        <Link to="/#projects" className="experience-closing-link">
           Explore projects
           <ArrowUpRight size={17} aria-hidden="true" />
         </Link>

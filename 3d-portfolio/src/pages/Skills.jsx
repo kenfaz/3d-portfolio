@@ -113,7 +113,7 @@ export default function Skills() {
   }
 
   return (
-    <main className="skills-page">
+    <main className="skills-page" id="skills">
       <div className="skills-stars" aria-hidden="true" />
       <div className="skills-orbit skills-orbit-one" aria-hidden="true" />
       <div className="skills-orbit skills-orbit-two" aria-hidden="true" />

@@ -15,6 +15,7 @@ import {
   BriefcaseBusiness,
   UserRound,
 } from "lucide-react";
+import { Link } from "react-router-dom";
 import "./About.css";
 
 const profile = {
@@ -89,9 +90,8 @@ export default function About() {
             <div className="about-orbit about-orbit-one" />
             <div className="about-orbit about-orbit-two" />
 
-            <div className="about-avatar" aria-label="Profile image placeholder">
-              <UserRound size={100} strokeWidth={1} />
-              <span>YOUR PORTRAIT</span>
+            <div className="about-avatar">
+              <img src="/profile.jpg" alt={`${profile.name} profile`} />
             </div>
 
             <span className="about-moon about-moon-one" />
@@ -120,9 +120,9 @@ export default function About() {
             meaningful experiences.
           </p>
 
-          <a className="about-cta" href="/projects">
+          <Link className="about-cta" to="/#projects">
             Explore My Projects <ArrowRight size={17} />
-          </a>
+          </Link>
         </div>
 
         <aside className="about-info-card" aria-label="Personal information">
@@ -221,11 +221,11 @@ export default function About() {
 
       <footer className="about-bottom">
         <span />
-        <a href="/contact">
+        <Link to="/#contact">
           <Rocket size={16} />
           LET'S CONNECT
           <ArrowRight size={15} />
-        </a>
+        </Link>
         <span />
       </footer>
     </main>

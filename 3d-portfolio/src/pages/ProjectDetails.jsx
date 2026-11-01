@@ -20,7 +20,7 @@ export default function ProjectDetails() {
       <main className="project-detail-page">
         <h1>Mission not found</h1>
         <p>This project could not be found in the project database.</p>
-        <Link to="/projects">
+        <Link to="/#projects">
           <ArrowLeft size={17} /> Return to projects
         </Link>
       </main>
@@ -32,7 +32,7 @@ export default function ProjectDetails() {
       className="project-detail-page"
       style={{ "--detail-accent": project.accent }}
     >
-      <Link to="/projects" className="detail-back">
+      <Link to="/#projects" className="detail-back">
         <ArrowLeft size={17} /> Back to the galaxy
       </Link>
 
@@ -97,7 +97,7 @@ export default function ProjectDetails() {
         </div>
       </section>
 
-      <Link to="/projects" className="detail-return">
+      <Link to="/#projects" className="detail-return">
         Explore other missions <ArrowUpRight size={17} />
       </Link>
     </main>

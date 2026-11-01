@@ -165,7 +165,7 @@ export default function Projects() {
   }
 
   return (
-    <main className="projects-page">
+    <main className="projects-page" id="projects">
       <div className="projects-nebula" aria-hidden="true" />
 
       <header className="projects-heading">

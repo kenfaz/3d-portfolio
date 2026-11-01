@@ -22,10 +22,11 @@ const FORM_ENDPOINT = "https://formspree.io/f/YOUR_FORM_ID";
 
 // Replace these values with your actual contact information.
 const contactDetails = {
-  email: "your.email@example.com",
+  email: "khendavidfamadico@gmail.com",
   location: "Philippines",
-  github: "https://github.com/YOUR_USERNAME",
-  linkedin: "", // Add your LinkedIn profile URL if you have one.
+  github: "https://github.com/kenfaz",
+  // facebook: "https://www.facebook.com/kenfaz",
+  linkedin: "https://www.linkedin.com/in/khen-david-famadico-50ba49292", // Add your LinkedIn profile URL if you have one.
 };
 
 export default function Contact() {
@@ -136,7 +137,7 @@ export default function Contact() {
   }
 
   return (
-    <main className="contact-page">
+    <main className="contact-page" id="contact">
       <div className="contact-stars" aria-hidden="true" />
       <div className="contact-orbit contact-orbit-one" aria-hidden="true" />
       <div className="contact-orbit contact-orbit-two" aria-hidden="true" />

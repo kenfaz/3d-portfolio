@@ -6,15 +6,16 @@ import {
   Mail,
   Rocket,
 } from "lucide-react";
+import { Link } from "react-router-dom";
 
 import SpaceScene from "../components/SpaceScene";
 
 export default function Home({ darkMode }) {
   return (
-    <main className={darkMode ? "home dark" : "home light"}>
+    <main className={darkMode ? "home dark" : "home light"} id="home">
       <div className="space-background" aria-hidden="true" />
 
-      <section className="hero" id="home">
+      <section className="hero">
         <div className="hero-copy">
           <div className="eyebrow">
             <span className="status-dot" />
@@ -47,22 +48,22 @@ export default function Home({ darkMode }) {
           </div>
 
           <div className="hero-buttons">
-            <a className="button button-primary" href="#projects">
+            <Link className="button button-primary" to="/#projects">
               <Rocket size={18} />
               Explore My Projects
               <ArrowRight size={17} />
-            </a>
+            </Link>
 
-            <a className="button button-secondary" href="/cv.pdf" download>
+            <a className="button button-secondary" href="/Resume.png" download>
               <Download size={18} />
               Download CV
             </a>
           </div>
 
-          <a className="contact-link" href="/contact">
+          <Link className="contact-link" to="/#contact">
             <Mail size={16} />
             Let's connect
-          </a>
+          </Link>
         </div>
 
         <div className="planet-area">
@@ -97,17 +98,17 @@ export default function Home({ darkMode }) {
           >
             <CodeXml size={19} />
           </a>
-          <a href="#contact" aria-label="Contact">
+          <Link to="/#contact" aria-label="Contact">
             <Mail size={19} />
-          </a>
+          </Link>
         </div>
 
-        <a className="scroll-prompt" href="#about">
+        <Link className="scroll-prompt" to="/#about">
           <span className="scroll-icon">
             <ArrowDown size={15} />
           </span>
           <span>SCROLL TO EXPLORE</span>
-        </a>
+        </Link>
 
         <div className="hero-index">
           <span>01</span>

@@ -17,13 +17,24 @@ import "./Education.css";
 const education = [
   {
     id: 1,
-    level: "Current / Most Recent Education",
-    program: "Your Degree or Program",
-    school: "Your School Name",
-    period: "Start Year – Present",
+    level: "College",
+    program: "Bachelor of Science in Information Technology",
+    school: "City College of Calamba",
+    period: "2024 - 2028",
     description:
-      "Add a short description of your academic program, areas of study, and relevant coursework.",
-    status: "Edit this entry",
+      "Learned Data structures, Algorithms, Web Development, Database Management, and Software Engineering principles. Gained hands-on experience through projects and internships.",
+    status: "Ongoing",
+  
+  },
+  {
+    id: 2,
+    level: "Senior High School",
+    strand: "TVL - Information and Communication Technology (ICT)",
+    school: "Laguna College of Business and Arts",
+    period: "2022 - 2024",
+    description: "Acquired my NC2 in Computer Systems Servicing. Gained practical skills in computer hardware, software installation, and troubleshooting.",
+    status: "Finished",
+  
   },
 ];
 
@@ -67,7 +78,7 @@ const credentials = [
     issuer: "Verify issuing organization",
     category: "Design / Development",
     description:
-      "Add a brief explanation of the skills or achievement recognized by this certificate.",
+      "Won 3rd place in the Pixel Perfect Challenge for UI/UX design using Figma.",
     icon: Medal,
     accent: "#ffc477",
     year: "Add year",
@@ -79,7 +90,7 @@ const achievements = [
     title: "DCI Hackathon — First Place",
     subtitle: "Hackathon Achievement",
     description:
-      "Recognized for achieving first place in the DCI Hackathon. Add the event date, project name, and team details if applicable.",
+      "Recognized for achieving first place in the DCI Hackathon October 21.",
     icon: Trophy,
     accent: "#ffc477",
   },
@@ -87,7 +98,7 @@ const achievements = [
 
 export default function Education() {
   return (
-    <main className="education-page">
+    <main className="education-page" id="education">
       <div className="education-stars" aria-hidden="true" />
       <div className="education-orbit education-orbit-one" aria-hidden="true" />
       <div className="education-orbit education-orbit-two" aria-hidden="true" />
@@ -299,7 +310,7 @@ export default function Education() {
             develop new skills and strengthen existing ones.
           </p>
         </div>
-        <Link to="/projects" className="education-cta-link">
+        <Link to="/#projects" className="education-cta-link">
           View my projects
           <ExternalLink size={16} aria-hidden="true" />
         </Link>

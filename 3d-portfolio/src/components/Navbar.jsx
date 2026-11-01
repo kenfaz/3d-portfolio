@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   ArrowRight,
   Download,
@@ -9,19 +9,47 @@ import {
 import { Link, useLocation } from "react-router-dom";
 
 const navigationLinks = [
-  ["Home", "/"],
-  ["About", "/about"],
-  ["Skills", "/skills"],
-  ["Experience", "/experience"],
-  ["Projects", "/projects"],
-  ["Education", "/education"],
-  ["Contact", "/contact"],
+  ["Home", "home"],
+  ["About", "about"],
+  ["Skills", "skills"],
+  ["Experience", "experience"],
+  ["Projects", "projects"],
+  ["Education", "education"],
+  ["Contact", "contact"],
 ];
 
 export default function Navbar({ darkMode, onToggleTheme }) {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("home");
   const { pathname } = useLocation();
   const isHome = pathname === "/";
+
+  useEffect(() => {
+    function updateActiveSection() {
+      if (!isHome) {
+        setActiveSection(pathname.startsWith("/projects") ? "projects" : pathname.slice(1));
+        return;
+      }
+
+      const activationLine =
+        document.querySelector(".navbar")?.getBoundingClientRect().bottom ?? 0;
+      const currentSection = navigationLinks
+        .map(([, section]) => document.getElementById(section))
+        .filter((element) => element && element.getBoundingClientRect().top <= activationLine + 1)
+        .pop();
+
+      setActiveSection(currentSection?.id ?? "home");
+    }
+
+    updateActiveSection();
+    window.addEventListener("scroll", updateActiveSection, { passive: true });
+    window.addEventListener("resize", updateActiveSection);
+
+    return () => {
+      window.removeEventListener("scroll", updateActiveSection);
+      window.removeEventListener("resize", updateActiveSection);
+    };
+  }, [isHome, pathname]);
 
   return (
     <header className={`navbar${isHome && !darkMode ? " light" : ""}`}>
@@ -40,15 +68,13 @@ export default function Navbar({ darkMode, onToggleTheme }) {
       </button>
 
       <nav className={menuOpen ? "nav-links open" : "nav-links"}>
-        {navigationLinks.map(([label, href]) => {
-          const isActive =
-            pathname === href ||
-            (href === "/projects" && pathname.startsWith("/projects/"));
+        {navigationLinks.map(([label, section]) => {
+          const isActive = activeSection === section;
 
           return (
             <Link
               key={label}
-              to={href}
+              to={`/#${section}`}
               className={isActive ? "active" : ""}
               aria-current={isActive ? "page" : undefined}
               onClick={() => setMenuOpen(false)}
@@ -60,7 +86,7 @@ export default function Navbar({ darkMode, onToggleTheme }) {
       </nav>
 
       <div className="nav-actions">
-        <a className="nav-cv" href="/cv.pdf" download>
+        <a className="nav-cv" href="/Resume.png" download>
           CV <Download size={15} />
         </a>
 
