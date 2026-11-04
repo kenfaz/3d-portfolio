@@ -75,7 +75,7 @@ function ProjectCard({ project, index }) {
 
         <p className="project-description">{project.description}</p>
 
-        <div className="project-tech-list" aria-label="Technologies">
+        <div className="project-tech-list" aria-label="Tools and techniques">
           {project.technologies.map((technology) => (
             <span key={technology}>{technology}</span>
           ))}
@@ -121,12 +121,12 @@ function ProjectCard({ project, index }) {
 export default function Projects() {
   const [search, setSearch] = useState("");
   const [category, setCategory] = useState("All Projects");
-  const [technology, setTechnology] = useState("All Technologies");
+  const [technology, setTechnology] = useState("All Tools & Techniques");
   const [featuredOnly, setFeaturedOnly] = useState(false);
 
   const technologies = useMemo(
     () => [
-      "All Technologies",
+      "All Tools & Techniques",
       ...new Set(projects.flatMap((project) => project.technologies)),
     ],
     []
@@ -151,7 +151,7 @@ export default function Projects() {
         category === "All Projects" || project.category === category;
 
       const matchesTechnology =
-        technology === "All Technologies" ||
+        technology === "All Tools & Techniques" ||
         project.technologies.includes(technology);
 
       const matchesFeatured = !featuredOnly || project.featured;
@@ -168,7 +168,7 @@ export default function Projects() {
   function clearFilters() {
     setSearch("");
     setCategory("All Projects");
-    setTechnology("All Technologies");
+    setTechnology("All Tools & Techniques");
     setFeaturedOnly(false);
   }
 
@@ -201,7 +201,7 @@ export default function Projects() {
             <strong>{new Set(projects.flatMap((p) => p.technologies)).size
               .toString()
               .padStart(2, "0")}</strong>
-            <span>TECHNOLOGIES</span>
+            <span>TOOLS & TECHNIQUES</span>
           </div>
           <span className="projects-stat-divider" />
           <div>
@@ -221,7 +221,7 @@ export default function Projects() {
             <Search size={19} aria-hidden="true" />
             <input
               type="search"
-              placeholder="Search projects or technologies..."
+              placeholder="Search projects, tools, or techniques..."
               value={search}
               onChange={(event) => setSearch(event.target.value)}
               aria-label="Search projects"
@@ -238,7 +238,7 @@ export default function Projects() {
           </label>
 
           <label className="projects-technology-select">
-            <span className="sr-only">Filter by technology</span>
+            <span className="sr-only">Filter by tool or technique</span>
             <select
               value={technology}
               onChange={(event) => setTechnology(event.target.value)}
@@ -286,7 +286,7 @@ export default function Projects() {
 
           {(search ||
             category !== "All Projects" ||
-            technology !== "All Technologies" ||
+            technology !== "All Tools & Techniques" ||
             featuredOnly) && (
             <button type="button" onClick={clearFilters}>
               Clear filters <X size={14} />

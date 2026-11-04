@@ -56,7 +56,7 @@ export default function ProjectDetails() {
       </section>
 
       <section className="detail-section">
-        <h2>Technologies Used</h2>
+        <h2>Tools & Techniques</h2>
         <div className="detail-tech-list">
           {project.technologies.map((technology) => (
             <span key={technology}>
