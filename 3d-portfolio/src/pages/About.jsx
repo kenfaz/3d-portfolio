@@ -91,7 +91,7 @@ export default function About() {
             <div className="about-orbit about-orbit-two" />
 
             <div className="about-avatar">
-              <img src="/profile.jpg" alt={`${profile.name} profile`} />
+              <img src="/profile.png" alt={`${profile.name} profile`} />
             </div>
 
             <div className="about-moon-orbit about-moon-orbit-one" aria-hidden="true">
